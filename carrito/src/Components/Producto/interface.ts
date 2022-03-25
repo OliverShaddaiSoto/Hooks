@@ -1,7 +1,7 @@
 
 export interface ProductoProps{
     key: string;
-    agregarAlCarro(): void;
+    agregarAlCarro: (producto: ProductoState)=>{};
     producto: ProductoState;
 }
 

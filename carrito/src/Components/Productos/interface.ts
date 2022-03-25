@@ -1,5 +1,6 @@
 export interface ProductosProps{
     productos: ProductosState[];
+    agregarAlCarro: (producto: ProductosState)=>{};
 }
 
 export interface ProductosState{

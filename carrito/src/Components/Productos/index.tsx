@@ -12,12 +12,11 @@ const styles = {
 
 class Productos extends React.Component<ProductosProps>{
     render(){
-        const { productos }  = this.props;
+        const { productos, agregarAlCarro }  = this.props;
         return(
             <div style={styles.productos}>
                 {productos.map(producto => 
-                    <Producto agregarAlCarro={() => {console.log('No hace nada');
-                    }} key={producto.name} producto={producto}/>
+                    <Producto agregarAlCarro={agregarAlCarro} key={producto.name} producto={producto}/>
                 )}
             </div>
         );

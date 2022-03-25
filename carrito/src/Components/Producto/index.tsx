@@ -23,7 +23,7 @@ class Producto extends React.Component<ProductoProps>{
                 <img style={styles.img} src={producto.img} alt={producto.name} width='350' height='250' />
                 <h3>{producto.name}</h3>
                 <p>price: {producto.price}</p>
-                <Button onClick={() => agregarAlCarro()} > Agregar al carro </Button>
+                <Button onClick={agregarAlCarro} > Agregar al carro </Button>
             </div>
         )
     }
