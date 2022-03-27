@@ -15,7 +15,10 @@ const styles ={
     }
 }
 
+
+
 class Producto extends React.Component<ProductoProps>{
+ 
     render(){    
         const {producto, agregarAlCarro} = this.props;
         return(

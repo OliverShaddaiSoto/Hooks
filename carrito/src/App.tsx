@@ -3,7 +3,8 @@ import Productos from './Components/Productos'
 import Layout from './Components/Layout'
 import Title from './Components/Title'
 import NavBar from './Components/NavBar'
-import { ProductosState } from './Components/Productos/interface'
+import { ProductosProps, ProductosState } from './Components/Productos/interface'
+
 
 
 
@@ -15,23 +16,40 @@ state = {
     { name: 'Halo', price: 1600, img: '/productos/halo.jpg' },
   ],
   carro: [
-    //{ name: 'Monitor', price: 1500, img: '/productos/monitor.jpg', cantidad: 1},
+    { name: 'Monitor', price: 1500, img: '/productos/monitor.jpg', cantidad: 1},
   ]
 }
 
+agregarAlCarro = (producto: any) => () =>{
+  
+  const {carro} = this.state;
 
-  agregarAlCarro = (producto: ProductosState) => {
-    console.log(producto);
-    return '';
+  if (carro.find(x => producto.name === producto.name)) {
+    const newCarro = carro.map(x => producto.name === producto.name ?
+       ({
+         ...producto,
+         cantidad: carro[0].cantidad +1
+       })
+       : x) 
+       return this.setState({carro: newCarro})
   }
+  return this.setState({
+    carro: this.state.carro.concat({
+      ...producto,
+      cantidad: 1,
+    })
+  })
+}
 
   render(){
+    
+    
   return (
     <div>
       <NavBar/>
       <Layout>
         <Title/>
-        <Productos agregarAlCarro={this.agregarAlCarro} productos={this.state.productos}/>
+        <Productos agregarAlCarro={this.agregarAlCarro(this.state.productos[0])} productos={this.state.productos}/>
       </Layout>
     </div>
   )

@@ -1,7 +1,8 @@
+import Producto from ".";
 
 export interface ProductoProps{
     key: string;
-    agregarAlCarro: (producto: ProductoState)=>{};
+    agregarAlCarro(): ProductoState;
     producto: ProductoState;
 }
 

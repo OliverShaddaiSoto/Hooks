@@ -11,6 +11,7 @@ const styles = {
 }
 
 class Productos extends React.Component<ProductosProps>{
+
     render(){
         const { productos, agregarAlCarro }  = this.props;
         return(
@@ -18,6 +19,7 @@ class Productos extends React.Component<ProductosProps>{
                 {productos.map(producto => 
                     <Producto agregarAlCarro={agregarAlCarro} key={producto.name} producto={producto}/>
                 )}
+                
             </div>
         );
     }
