@@ -1,24 +1,24 @@
-import React, {  useReducer } from 'react'
-
-// {contador : 0}
-// action = {type: String, payload: any}
-const reducer  = (state: any , action: any) => {
-    switch (action.type) {
-        case 'incrementar':
-            return { contador : state.contador + 1}
-        case 'decrementar':
-            return { contador : state.contador - 1}
-        case 'set':
-            return { contador :  action.payload}
-    }
-    
-}
+import React, {  useRef } from 'react'
 
 const App = () => {
+    const ref = useRef()
+    const inputRef = useRef()
+    const click = () => {
+        console.log(ref);
+        ref.current.innerHTML = 'Chanchito Feliz';
+    }
+
+    const focus = () =>{
+        inputRef.current.focus()
+    }
     return(
         <div>
-
+            <input type="text" ref={inputRef} />
+            <button onClick={focus}>Focus</button>
+            <div onClick={click} ref={ref}>LALA</div>
         </div>
     )
 }
 export default App
+
+
