@@ -1,5 +1,6 @@
 import { ErrorMessage, Field, Form, Formik, useFormik, } from 'formik'
 import CheckBox from './components/CheckBox';
+import Select from './components/Select';
 import TextInput from './components/TextInput';
 
 function App() {
@@ -56,6 +57,12 @@ function App() {
                     <br />
 
                     <CheckBox name="accept">Aceptar Terminos y condiciones</CheckBox>
+
+                    <Select name= "Tipo de chancho" label="chacho">
+                        <option value="">-- Seleccione Chancho --</option>
+                        <option value="ChanchitoFeliuz"> Chanchito Feliz </option>
+                        <option value="ChanchitoTriste"> Chanchito Triste </option>
+                    </Select>
 
                     <button type='submit'>enviar</button>
                 </Form>
