@@ -1,0 +1,16 @@
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #eee;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.center {
+  -webkit-column-count: 3;
+          column-count: 3;
+  width: 1200px;
+}
+/*# sourceMappingURL=content.css.map */

@@ -1,0 +1,9 @@
+article {
+  display: inline-block;
+  width: 370px;
+}
+
+article > img {
+  width: inherit;
+}
+/*# sourceMappingURL=article.css.map */
